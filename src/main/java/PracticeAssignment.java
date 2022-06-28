@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.Assert;
 
+import java.time.Duration;
 
 
 public class PracticeAssignment {
@@ -19,6 +20,7 @@ public class PracticeAssignment {
         WebDriver driver =new ChromeDriver();
         driver.manage().window().maximize();
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         driver.get("https://rahulshettyacademy.com/dropdownsPractise");
 
@@ -32,7 +34,6 @@ public class PracticeAssignment {
 
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
 
-        driver.findElement(By.xpath("//a[@class='ui-state-default ui-state-highlight ui-state-active']"));
         if(driver.findElement(By.id("Div1")).getAttribute("style").contains("0.5"))
 
         {
